@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QWidge
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.Qt import *
 
+from controlMusic import ControlMusic
+
 
 class MainWindow(QMainWindow, QWidget):
     def __init__(self):
@@ -32,6 +34,12 @@ class MainWindow(QMainWindow, QWidget):
         # self.control_music_label.setPixmap(QtGui.QPixmap("./icon/music.png").scaled(100, 100))
         self.control_music_label.setIcon(QIcon('icon/music.png'))
         self.control_music_label.setIconSize(QSize(50, 50))
+        self.control_music_label.clicked.connect(lambda:self.onClicked('controlMusic')) 
+
+    
+    def onClicked(self, widget):
+        app = ControlMusic(self)
+        
 
     def test_f(self):
         def m():
