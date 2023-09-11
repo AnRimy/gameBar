@@ -5,7 +5,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.Qt import *
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, QWidget):
     def __init__(self):
         super().__init__()
         self.screen = QDesktopWidget().availableGeometry()
@@ -26,11 +26,12 @@ class MainWindow(QMainWindow):
         self.widget_vk()
 
     def widget_vk(self):
-        self.vk_music_label = QLabel(self.bar_label)
-        self.vk_music_label.setStyleSheet('QPushButton{background: rgb(0, 0, 0); border-radius:25px;}'
-                                          'QPushButton:hover{background: rgb(40, 50, 50)}')
-        self.vk_music_label.setGeometry(2, 2, 50, 50) 
-        self.vk_music_label.setPixmap(QtGui.QPixmap("itunes.png").scaled(50, 50))
+        self.control_music_label = QPushButton(self.bar_label)
+        self.control_music_label.setStyleSheet('background-color: rgb(128, 128, 128); border-radius:25px')
+        self.control_music_label.setGeometry(2, 2, 50, 50) 
+        # self.control_music_label.setPixmap(QtGui.QPixmap("./icon/music.png").scaled(100, 100))
+        self.control_music_label.setIcon(QIcon('icon/music.png'))
+        self.control_music_label.setIconSize(QSize(50, 50))
 
     def test_f(self):
         def m():
