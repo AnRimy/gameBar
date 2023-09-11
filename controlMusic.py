@@ -6,4 +6,3 @@ class ControlMusic(QMainWindow):
         super().__init__(parent)                         
         self.setWindowTitle("Window_2")
         self.resize(200, 215)
-c
