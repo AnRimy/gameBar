@@ -20,6 +20,8 @@ class MainWindow(QMainWindow, QWidget):
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setStyleSheet('background-color:rgba(0, 0, 0, 70)')
         self.resize(self.screen.width(), 1080)
+        
+        self.moduls = {'controlMusic':[False, [200, 200]]}
 
     def topBar(self):
         self.bar_label = QPushButton(self)
@@ -33,12 +35,13 @@ class MainWindow(QMainWindow, QWidget):
         self.control_music_label.setGeometry(2, 2, 50, 50) 
         self.control_music_label.setIcon(QIcon('icon/music.png'))
         self.control_music_label.setIconSize(QSize(50, 50))
-        self.control_music_label.clicked.connect(lambda:self.onClicked('controlMusic')) 
+        self.control_music_label.clicked.connect(lambda:self.onClicked('controlMusic', 
+                                                                       [840, 100, 300, 200])) 
+        
 
     
-    def onClicked(self, widget):
-        g = (10, 10, 200, 200)
-        app = ControlMusic(self, g)
+    def onClicked(self, widget, geometry):
+        app = ControlMusic(self, geometry)
         
 
     def test_f(self):

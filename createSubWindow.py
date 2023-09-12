@@ -10,5 +10,6 @@ class CreateWin(QMainWindow):
         self.setGeometry(*args[0])
         self.screen = QDesktopWidget().availableGeometry()
         self.setWindowFlag(Qt.FramelessWindowHint)
+        self.setStyleSheet('border-radius: 100px; background-color: rgb(100, 100, 100)')
 
 
