@@ -7,8 +7,8 @@ from PyQt5.Qt import *
 from createSubWindow import CreateWin
 
 class ControlMusic(CreateWin):                             
-    def __init__(self, parent=None):                        
-        self.root = CreateWin(parent)
+    def __init__(self, parent=None, *args):                       
+        self.root = CreateWin(parent, *args)
         self.widgets()
 
 

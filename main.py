@@ -31,14 +31,14 @@ class MainWindow(QMainWindow, QWidget):
         self.control_music_label = QPushButton(self.bar_label)
         self.control_music_label.setStyleSheet('background-color: rgb(128, 128, 128); border-radius:25px')
         self.control_music_label.setGeometry(2, 2, 50, 50) 
-        # self.control_music_label.setPixmap(QtGui.QPixmap("./icon/music.png").scaled(100, 100))
         self.control_music_label.setIcon(QIcon('icon/music.png'))
         self.control_music_label.setIconSize(QSize(50, 50))
         self.control_music_label.clicked.connect(lambda:self.onClicked('controlMusic')) 
 
     
     def onClicked(self, widget):
-        app = ControlMusic(self)
+        g = (10, 10, 200, 200)
+        app = ControlMusic(self, g)
         
 
     def test_f(self):
