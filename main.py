@@ -21,7 +21,7 @@ class MainWindow(QMainWindow, QWidget):
         self.setStyleSheet('background-color:rgba(0, 0, 0, 70)')
         self.resize(self.screen.width(), 1080)
         
-        self.moduls = {'controlMusic':[False, [200, 200]]}
+        self.moduls = {'controlMusic':{'open': False}}
 
     def topBar(self):
         self.bar_label = QPushButton(self)
@@ -30,18 +30,24 @@ class MainWindow(QMainWindow, QWidget):
         self.widget_vk()
 
     def widget_vk(self):
-        self.control_music_label = QPushButton(self.bar_label)
-        self.control_music_label.setStyleSheet('background-color: rgb(128, 128, 128); border-radius:25px')
-        self.control_music_label.setGeometry(2, 2, 50, 50) 
-        self.control_music_label.setIcon(QIcon('icon/music.png'))
-        self.control_music_label.setIconSize(QSize(50, 50))
-        self.control_music_label.clicked.connect(lambda:self.onClicked('controlMusic', 
+        self.controlMusic_label = QPushButton(self.bar_label)
+        self.controlMusic_label.setStyleSheet('background-color: rgb(128, 128, 128); border-radius:25px')
+        self.controlMusic_label.setGeometry(2, 2, 50, 50) 
+        self.controlMusic_label.setIcon(QIcon('icon/music.png'))
+        self.controlMusic_label.setIconSize(QSize(50, 50))
+        self.controlMusic_label.clicked.connect(lambda:self.onClicked('controlMusic', 
                                                                        [840, 100, 300, 200])) 
         
 
     
     def onClicked(self, widget, geometry):
-        app = ControlMusic(self, geometry)
+        if widget == 'controlMusic':
+            if self.moduls['controlMusic']['open'] == False:
+                self.moduls['controlMusic']['open'] = True
+                self.app = ControlMusic(self, geometry)
+            else:
+                self.moduls['controlMusic']['open'] = False
+                self.app.close()
         
 
     def test_f(self):

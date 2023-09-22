@@ -13,9 +13,11 @@ class ControlMusic(CreateWin):
         # self.widgets()
         self.root.show()
 
-
     def widgets(self):
         self.main_frame = QFrame(self.root)
         self.main_frame.setGeometry(0, 0, self.geometry[0][2], self.geometry[0][3])
         self.main_frame.setStyleSheet('background-color:red')
+
+    def close(self):
+        self.root.close()
     
