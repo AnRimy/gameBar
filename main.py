@@ -31,7 +31,7 @@ class MainWindow(QMainWindow, QWidget):
 
     def widget_vk(self):
         self.controlMusic_label = QPushButton(self.bar_label)
-        self.controlMusic_label.setStyleSheet('background-color: rgb(128, 128, 128); border-radius:25px')
+        self.controlMusic_label.setStyleSheet('background-color: rgb(255, 255, 255); border-radius:25px')
         self.controlMusic_label.setGeometry(2, 2, 50, 50) 
         self.controlMusic_label.setIcon(QIcon('icon/music.png'))
         self.controlMusic_label.setIconSize(QSize(50, 50))
