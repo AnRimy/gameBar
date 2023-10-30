@@ -33,12 +33,15 @@ class ControlMusic(CreateWin):
         
         self.backSoundButton.clicked.connect(lambda:self.changeSound('back'))
         self.nextSoundButton.clicked.connect(lambda:self.changeSound('next'))
+        self.stopStartButton.clicked.connect(lambda:self.changeSound('stop/start'))
 
     def changeSound(self, action):
         if action == 'back':
             keyboard.send('back track')
         if action == 'next':
             keyboard.send('next track')
+        if action == 'stop/start':
+            keyboard.send('play-pause')
 
 
     def close(self):
