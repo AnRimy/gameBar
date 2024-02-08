@@ -7,17 +7,17 @@ import keyboard
 
 from createSubWindow import CreateWin
 
-class ControlMusic(CreateWin):                             
-    def __init__(self, parent=None, *args): 
-        self.geometry = args      
-        self.root = CreateWin(parent, *args)
+class ControlMusic:                             
+    def __init__(self, args, parent): 
+        # self.x, self.y, self.w, self.h = args   
+        self.root = CreateWin(parent, args)
         self.widgets()
         self.root.show()
 
     def widgets(self):
         self.mainFrame = QFrame(self.root)
-        self.mainFrame.setGeometry(0, 0, self.geometry[0][2], self.geometry[0][3])
-        self.mainFrame.setStyleSheet('background-color:rgb(150, 150, 150); border-radius: 0px')
+        self.mainFrame.setGeometry(0, 0, 300, 200)
+        self.mainFrame.setStyleSheet('background-color:rgb(40, 36, 36); border-radius: 0px')
 
         self.backSoundButton = QPushButton(self.mainFrame)
         self.backSoundButton.setGeometry(10, 75, 50, 50)
