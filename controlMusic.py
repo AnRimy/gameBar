@@ -8,11 +8,11 @@ import keyboard
 from createSubWindow import CreateWin
 
 class ControlMusic:                             
-    def __init__(self, args, parent): 
-        # self.x, self.y, self.w, self.h = args   
+    def __init__(self, args, parent):  
         self.root = CreateWin(parent, args)
         self.widgets()
         self.root.show()
+
 
     def widgets(self):
         self.mainFrame = QFrame(self.root)
@@ -34,6 +34,7 @@ class ControlMusic:
         self.backSoundButton.clicked.connect(lambda:self.changeSound('back'))
         self.nextSoundButton.clicked.connect(lambda:self.changeSound('next'))
         self.stopStartButton.clicked.connect(lambda:self.changeSound('stop/start'))
+
 
     def changeSound(self, action):
         if action == 'back':
