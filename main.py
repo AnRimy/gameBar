@@ -141,4 +141,5 @@ if __name__ == '__main__':
     window = MainWindow()
     window.run()
     app.exec()
+    print()
     
