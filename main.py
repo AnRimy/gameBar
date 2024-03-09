@@ -140,6 +140,5 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
     window.run()
-    app.exec()
-    print()
+    app.exec()п
     
